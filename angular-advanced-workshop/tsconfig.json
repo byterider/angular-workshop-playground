@@ -1,0 +1,36 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "micro-app1": [
+        "projects/micro-app1"
+      ],
+      "micro-app1/*": [
+        "projects/micro-app1/*"
+      ],
+      "micro-app2": [
+        "projects/micro-app2"
+      ],
+      "micro-app2/*": [
+        "projects/micro-app2/*"
+      ]
+    }
+  }
+}

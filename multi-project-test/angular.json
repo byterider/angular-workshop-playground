@@ -1,0 +1,248 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "first-project": {
+      "root": "projects/first-project/",
+      "sourceRoot": "projects/first-project/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "changeDetection": "OnPush",
+          "viewEncapsulation": "ShadowDom"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/first-project",
+            "index": "projects/first-project/src/index.html",
+            "main": "projects/first-project/src/main.ts",
+            "polyfills": "projects/first-project/src/polyfills.ts",
+            "tsConfig": "projects/first-project/tsconfig.app.json",
+            "assets": [
+              "projects/first-project/src/favicon.ico",
+              "projects/first-project/src/assets"
+            ],
+            "styles": [
+              "projects/first-project/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+				{
+					"replace": "projects/first-project/src/environments/environment.ts",
+					"with": "projects/first-project/src/environments/environment.prod.ts"
+				}
+			],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "first-project:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "first-project:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "first-project:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/first-project/src/test.ts",
+            "polyfills": "projects/first-project/src/polyfills.ts",
+            "tsConfig": "projects/first-project/tsconfig.spec.json",
+            "karmaConfig": "projects/first-project/karma.conf.js",
+            "styles": [
+              "projects/first-project/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/first-project/src/favicon.ico",
+              "projects/first-project/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/first-project/tsconfig.app.json",
+              "projects/first-project/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "second-project": {
+      "root": "projects/second-project/",
+      "sourceRoot": "projects/second-project/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/second-project",
+            "index": "projects/second-project/src/index.html",
+            "main": "projects/second-project/src/main.ts",
+            "polyfills": "projects/second-project/src/polyfills.ts",
+            "tsConfig": "projects/second-project/tsconfig.app.json",
+            "assets": [
+              "projects/second-project/src/favicon.ico",
+              "projects/second-project/src/assets"
+            ],
+            "styles": [
+              "projects/second-project/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/second-project/src/environments/environment.ts",
+                  "with": "projects/second-project/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "second-project:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "second-project:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "second-project:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/second-project/src/test.ts",
+            "polyfills": "projects/second-project/src/polyfills.ts",
+            "tsConfig": "projects/second-project/tsconfig.spec.json",
+            "karmaConfig": "projects/second-project/karma.conf.js",
+            "styles": [
+              "projects/second-project/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/second-project/src/favicon.ico",
+              "projects/second-project/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/second-project/tsconfig.app.json",
+              "projects/second-project/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "my-lib2": {
+      "root": "projects/my-lib2",
+      "sourceRoot": "projects/my-lib2/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/my-lib2/tsconfig.lib.json",
+            "project": "projects/my-lib2/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/my-lib2/src/test.ts",
+            "tsConfig": "projects/my-lib2/tsconfig.spec.json",
+            "karmaConfig": "projects/my-lib2/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/my-lib2/tsconfig.lib.json",
+              "projects/my-lib2/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "first-project"
+}
